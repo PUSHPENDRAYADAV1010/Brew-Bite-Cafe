@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Brew & Bite Cafe | Coffee, Pastries & Fresh Meals</title>
+    <meta
+      name="description"
+      content="Order fresh coffee, pastries, meals, snacks and seasonal specials from Brew & Bite Cafe. Customize your order and choose dine-in, takeaway or pickup."
+    />
+    <meta
+      name="keywords"
+      content="cafe, coffee, pastries, meals, snacks, online cafe ordering, Brew and Bite"
+    />
+    <meta name="author" content="Brew & Bite Cafe" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#a86432" />
+
+    <meta property="og:title" content="Brew & Bite Cafe" />
+    <meta
+      property="og:description"
+      content="Fresh coffee, delicious food and simple online ordering."
+    />
+    <meta property="og:type" content="website" />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80'%3E☕%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CafeOrCoffeeShop",
+        "name": "Brew & Bite Cafe",
+        "description": "Cafe serving coffee, pastries, meals, snacks and seasonal specials.",
+        "servesCuisine": ["Cafe", "Coffee", "Bakery", "Breakfast"],
+        "priceRange": "₹₹"
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to menu</a>
+
+    <header class="navbar">
+      <a href="#" class="logo" aria-label="Brew & Bite Cafe home">
+        <span class="logo-mark">☕</span>
+        <span>Brew & Bite</span>
+      </a>
+
+      <div class="nav-search">
+        <label for="searchInput" class="sr-only">Search cafe menu</label>
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search coffee, pastries, meals..."
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="nav-actions">
+        <button
+          class="icon-btn"
+          id="favoriteBtn"
+          type="button"
+          aria-label="View favorites"
+        >
+          ♡
+        </button>
+        <button
+          class="cart-btn"
+          id="cartOpenBtn"
+          type="button"
+          aria-label="Open cart"
+        >
+          🛒 <span>Cart</span> <b id="cartCount">0</b>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <span class="eyebrow">Freshly made • Just for you</span>
+          <h1 id="heroTitle">
+            Good coffee.<br /><span>Good food.</span><br />Good moments.
+          </h1>
+          <p>
+            Explore handcrafted drinks, fresh pastries and satisfying meals.
+            Customize your order your way.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn" type="button" onclick="scrollToMenu()">
+              Explore Menu
+            </button>
+            <button
+              class="secondary-btn"
+              type="button"
+              onclick="showCategory('Seasonal')"
+            >
+              View Seasonal
+            </button>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Today's cafe special">
+          <span>Today's pick</span>
+          <strong>Caramel Macchiato</strong>
+          <small>Espresso • steamed milk • caramel</small>
+          <b>₹190</b>
+        </div>
+      </section>
+
+      <section class="category-strip" aria-label="Menu categories">
+        <button class="category-btn active" data-category="All">All</button>
+        <button class="category-btn" data-category="Drinks">☕ Drinks</button>
+        <button class="category-btn" data-category="Pastries">
+          🥐 Pastries
+        </button>
+        <button class="category-btn" data-category="Meals">🍽️ Meals</button>
+        <button class="category-btn" data-category="Snacks">🍪 Snacks</button>
+        <button class="category-btn" data-category="Seasonal">
+          ✨ Seasonal
+        </button>
+      </section>
+
+      <section class="menu-section" id="menu" aria-labelledby="menuTitle">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Our menu</span>
+            <h2 id="menuTitle">Made to order</h2>
+          </div>
+          <div class="filters" aria-label="Dietary filters">
+            <button class="filter-btn active" data-filter="All">All</button>
+            <button class="filter-btn" data-filter="Vegetarian">
+              Vegetarian
+            </button>
+            <button class="filter-btn" data-filter="Vegan">Vegan</button>
+            <button class="filter-btn" data-filter="Dairy-Free">
+              Dairy-Free
+            </button>
+            <button class="filter-btn" data-filter="Under 300 cal">
+              Under 300 cal
+            </button>
+          </div>
+        </div>
+
+        <div id="menuGrid" class="menu-grid"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <div>🔎</div>
+          <h3>No matching items</h3>
+          <p>Try another search, category or filter.</p>
+          <button class="secondary-btn" type="button" onclick="resetFilters()">
+            Show all items
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h2>☕ Brew & Bite</h2>
+          <p>Fresh coffee, delicious food and good moments.</p>
+        </div>
+        <div>
+          <h3>Menu</h3>
+          <a href="#menu" onclick="showCategory('Drinks')">Drinks</a>
+          <a href="#menu" onclick="showCategory('Pastries')">Pastries</a>
+          <a href="#menu" onclick="showCategory('Meals')">Meals</a>
+          <a href="#menu" onclick="showCategory('Seasonal')">Seasonal</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>📍 Mumbai, Maharashtra</p>
+          <p>📞 +91 XXXXX XXXXX</p>
+          <p>✉️ hello@brewandbite.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Brew & Bite Cafe. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Product customization modal -->
+    <div class="modal-backdrop" id="productModal" hidden>
+      <section
+        class="product-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalName"
+      >
+        <button
+          class="modal-close"
+          id="modalCloseBtn"
+          type="button"
+          aria-label="Close product details"
+        >
+          ×
+        </button>
+        <div class="modal-image-wrap">
+          <img id="modalImage" src="" alt="" />
+        </div>
+        <div class="modal-content">
+          <span id="modalCategory" class="small-label"></span>
+          <h2 id="modalName"></h2>
+          <p id="modalDescription"></p>
+          <div class="modal-price">₹<span id="modalPrice"></span></div>
+          <div id="customizationOptions"></div>
+
+          <div class="quantity-row">
+            <h3>Quantity</h3>
+            <div class="quantity">
+              <button
+                type="button"
+                onclick="changeQuantity(-1)"
+                aria-label="Decrease quantity"
+              >
+                −
+              </button>
+              <span id="quantity">1</span>
+              <button
+                type="button"
+                onclick="changeQuantity(1)"
+                aria-label="Increase quantity"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <label class="instructions-label" for="specialInstructions"
+            >Special instructions</label
+          >
+          <input
+            id="specialInstructions"
+            class="instructions"
+            maxlength="100"
+            type="text"
+            placeholder="Optional — e.g. less spicy"
+          />
+
+          <button class="add-cart-btn" id="addCartBtn" type="button">
+            Add to Cart · ₹<span id="livePrice">0</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Cart drawer -->
+    <div class="drawer-backdrop" id="cartDrawer" hidden>
+      <aside class="cart-drawer" aria-label="Shopping cart">
+        <div class="drawer-header">
+          <div>
+            <span class="eyebrow">Your order</span>
+            <h2>Cart</h2>
+          </div>
+          <button
+            class="modal-close"
+            id="cartCloseBtn"
+            type="button"
+            aria-label="Close cart"
+          >
+            ×
+          </button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+          <div class="summary-row">
+            <span>Subtotal</span><b>₹<span id="subtotal">0</span></b>
+          </div>
+          <div class="summary-row">
+            <span>Tax (5%)</span><span>₹<span id="tax">0</span></span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span><b>₹<span id="total">0</span></b>
+          </div>
+          <div class="order-type">
+            <button class="order-type-btn active" data-order-type="Dine-in">
+              Dine-in
+            </button>
+            <button class="order-type-btn" data-order-type="Takeout">
+              Takeout
+            </button>
+            <button class="order-type-btn" data-order-type="Pickup">
+              Pickup
+            </button>
+          </div>
+          <button class="primary-btn full-width" id="checkoutBtn" type="button">
+            Place Order
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
