@@ -92,7 +92,7 @@ options.
 ---
 
 ## 🎨 Product Customization
-
+😃
 Instead of showing the same options for every product, the application
 uses **product-specific customization**.
 
