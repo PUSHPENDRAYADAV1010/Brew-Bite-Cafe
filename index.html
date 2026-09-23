@@ -164,6 +164,356 @@
           </button>
         </div>
       </section>
+      <!-- ==========================================
+     BREW & BITE - CUSTOMER ACCOUNT
+     ========================================== -->
+
+      <section id="auth-section" class="account-page">
+        <!-- ==============================
+         LOGIN / SIGNUP CARD
+         ============================== -->
+
+        <div id="auth-view" class="auth-view">
+          <div class="auth-card">
+            <div class="brand-icon">☕</div>
+
+            <h2>Welcome to Brew & Bite</h2>
+
+            <p class="auth-subtitle" id="auth-message">
+              Login or create your cafe account.
+            </p>
+
+            <form id="auth-form">
+              <!-- Full Name -->
+              <div id="full-name-group" class="form-group">
+                <label for="auth-full-name"> Full Name </label>
+
+                <input
+                  type="text"
+                  id="auth-full-name"
+                  placeholder="Enter your full name"
+                  autocomplete="name"
+                />
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="auth-email"> Email Address </label>
+
+                <input
+                  type="email"
+                  id="auth-email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <!-- Password -->
+              <div class="form-group">
+                <label for="auth-password"> Password </label>
+
+                <input
+                  type="password"
+                  id="auth-password"
+                  placeholder="Enter your password"
+                  minlength="6"
+                  autocomplete="current-password"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                id="auth-submit"
+                class="primary-account-btn"
+              >
+                Create Account
+              </button>
+            </form>
+
+            <button type="button" id="auth-toggle" class="auth-toggle">
+              Already have an account? Login
+            </button>
+          </div>
+        </div>
+
+        <!-- ==============================
+         CUSTOMER ACCOUNT DASHBOARD
+         ============================== -->
+
+        <div id="account-view" class="account-view" hidden>
+          <div class="account-container">
+            <!-- ==========================
+                 PROFILE HERO
+                 ========================== -->
+
+            <div class="profile-hero">
+              <div id="profile-avatar" class="profile-avatar">P</div>
+
+              <div class="profile-hero-info">
+                <span class="profile-welcome"> Welcome back 👋 </span>
+
+                <h2 id="account-name">Customer</h2>
+
+                <p id="account-email">customer@email.com</p>
+
+                <span class="customer-badge"> ☕ Brew & Bite Customer </span>
+              </div>
+
+              <button
+                type="button"
+                id="edit-profile-button"
+                class="edit-profile-btn"
+              >
+                ✏️ Edit Profile
+              </button>
+            </div>
+
+            <!-- ==========================
+                 ACCOUNT STATS
+                 ========================== -->
+
+            <div class="account-stats">
+              <div class="stat-card">
+                <div class="stat-icon">🛒</div>
+
+                <div>
+                  <strong id="orders-count"> 0 </strong>
+
+                  <span> Orders </span>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon">❤️</div>
+
+                <div>
+                  <strong id="favorites-count"> 0 </strong>
+
+                  <span> Favorites </span>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+
+                <div>
+                  <strong id="reviews-count"> 0 </strong>
+
+                  <span> Reviews </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ==========================
+                 PERSONAL INFORMATION
+                 ========================== -->
+
+            <div class="account-card">
+              <div class="account-card-header">
+                <div>
+                  <span class="section-kicker"> ACCOUNT </span>
+
+                  <h3>Personal Information</h3>
+                </div>
+
+                <span class="verified-badge"> ✓ Account </span>
+              </div>
+
+              <div class="profile-details-grid">
+                <div class="profile-detail">
+                  <span> Full Name </span>
+
+                  <strong id="display-full-name"> — </strong>
+                </div>
+
+                <div class="profile-detail">
+                  <span> Email Address </span>
+
+                  <strong id="display-email"> — </strong>
+                </div>
+
+                <div class="profile-detail">
+                  <span> Phone Number </span>
+
+                  <strong id="display-phone"> Not added </strong>
+                </div>
+
+                <div class="profile-detail">
+                  <span> Account Type </span>
+
+                  <strong id="display-role"> Customer </strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- ==========================
+                 RECENT ORDERS
+                 ========================== -->
+
+            <div class="account-card">
+              <div class="account-card-header">
+                <div>
+                  <span class="section-kicker"> ACTIVITY </span>
+
+                  <h3>Recent Orders 🛒</h3>
+                </div>
+              </div>
+
+              <div id="recent-orders" class="recent-orders">
+                <div class="empty-orders">
+                  <div>☕</div>
+
+                  <strong> No orders yet </strong>
+
+                  <p>Your delicious Brew & Bite orders will appear here.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ==========================
+                 QUICK ACTIONS
+                 ========================== -->
+
+            <div class="account-card">
+              <div class="account-card-header">
+                <div>
+                  <span class="section-kicker"> QUICK ACCESS </span>
+
+                  <h3>My Cafe</h3>
+                </div>
+              </div>
+
+              <div class="account-actions">
+                <button
+                  type="button"
+                  class="account-action"
+                  id="account-orders-btn"
+                >
+                  <span>🛒</span>
+
+                  <div>
+                    <strong>My Orders</strong>
+                    <small>View your order history</small>
+                  </div>
+
+                  <b>→</b>
+                </button>
+
+                <button
+                  type="button"
+                  class="account-action"
+                  id="account-favorites-btn"
+                >
+                  <span>❤️</span>
+
+                  <div>
+                    <strong>Favorites</strong>
+                    <small>Your saved cafe items</small>
+                  </div>
+
+                  <b>→</b>
+                </button>
+
+                <button
+                  type="button"
+                  class="account-action"
+                  id="account-reviews-btn"
+                >
+                  <span>⭐</span>
+
+                  <div>
+                    <strong>My Reviews</strong>
+                    <small>Manage your reviews</small>
+                  </div>
+
+                  <b>→</b>
+                </button>
+              </div>
+            </div>
+
+            <!-- ==========================
+                 LOGOUT
+                 ========================== -->
+
+            <button type="button" id="logout-button" class="logout-account-btn">
+              🚪 Logout
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+     EDIT PROFILE MODAL
+     ========================================== -->
+
+      <div id="profile-modal" class="profile-modal" hidden>
+        <div class="profile-modal-overlay"></div>
+
+        <div
+          class="profile-modal-card"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="profile-modal-title"
+        >
+          <button
+            type="button"
+            id="close-profile-modal"
+            class="modal-close"
+            aria-label="Close"
+          >
+            ×
+          </button>
+
+          <div class="modal-avatar">👤</div>
+
+          <h3 id="profile-modal-title">Edit Your Profile</h3>
+
+          <p>Keep your Brew & Bite account information up to date.</p>
+
+          <form id="profile-form">
+            <div class="form-group">
+              <label for="profile-name"> Full Name </label>
+
+              <input
+                type="text"
+                id="profile-name"
+                placeholder="Your full name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="profile-phone"> Phone Number </label>
+
+              <input
+                type="tel"
+                id="profile-phone"
+                placeholder="Your phone number"
+              />
+            </div>
+
+            <div class="form-group">
+              <label> Email Address </label>
+
+              <input type="email" id="profile-email" readonly />
+
+              <small> Email is managed by your login account. </small>
+            </div>
+
+            <button type="submit" id="profile-save" class="primary-account-btn">
+              Save Changes
+            </button>
+
+            <p
+              id="profile-message"
+              class="profile-message"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -305,5 +655,13 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js" defer></script>
+    <!-- Supabase JavaScript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="script.js"></script>
+
+    <script src="auth.js"></script>
   </body>
 </html>
