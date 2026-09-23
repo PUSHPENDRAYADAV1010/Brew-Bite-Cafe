@@ -5,7 +5,7 @@
 > enjoyable.
 
 🌐 **Live Demo:**  
-[[https://pushpendrayadav1010.github.io/Brew-Bite-Cafe/](https://tomcruise10.github.io/Brew-Bite-Cafe/)]
+https://pushpendrayadav1010.github.io/Brew-Bite-Cafe/
 
 📦 **Repository:**  
 https://github.com/pushpendrayadav1010/Brew-Bite-Cafe
